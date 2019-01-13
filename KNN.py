@@ -60,6 +60,7 @@ class KNN():
         
     def classify(self, image, k, distance = 'Euclidian'):
     #classify an image for k nearest neighbors
+    #returns the index of the label value
         #sets distance type
         if(distance == 'Euclidian'):
             getDistance = self.distance
@@ -108,8 +109,8 @@ def testAccuracy(classifier, testData, k, distance):
     endTime = time.perf_counter()
     print('Accuracy Time :', endTime - startTime)
     print('KNN accuracy with', distance, 'distance and', k, 'nearest neighbors:', accuracy)
-    
 
+ 
 def main():
     trainData = importTrainData()
     testData = importTestData()
